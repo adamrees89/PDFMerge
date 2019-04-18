@@ -86,4 +86,4 @@ print(f"""
       seconds per PDF.
       """)
 
-time.sleep(3)
+time.sleep(2)
