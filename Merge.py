@@ -67,7 +67,7 @@ def PDFMergeFunc(List):
             pdfWriter.addPage(pageObj)
 
         #save PDF to file on desktop, wb for write binary
-        pdfOutput = open(f"{os.path.join(Desktop,'document-output.pdf')}.pdf"
+        pdfOutput = open(f"{os.path.join(Desktop,'PrintMe.pdf')}"
                             , 'wb')
 
         #Outputting the PDF & Closing the PDF writer
