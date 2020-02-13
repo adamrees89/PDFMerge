@@ -23,8 +23,6 @@ ClickedOnFolder = " ".join(sys.argv[1:])
 
 Desktop = winshell.desktop()
 
-ClickedOnFolder = os.path.join(Desktop,"TEMP PDFS FOR CHECKING")
-
 def PDFSearch(folder):
     """
     This function searches for PDFs within the folder
