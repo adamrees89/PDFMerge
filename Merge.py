@@ -15,13 +15,15 @@ import time
 import glob
 import tkinter
 from tkinter import messagebox
-import PyPDF2
+import PyPDF4
 
 start = time.time()
 
 ClickedOnFolder = " ".join(sys.argv[1:])
 
 Desktop = winshell.desktop()
+
+ClickedOnFolder = os.path.join(Desktop,"TEMP PDFS FOR CHECKING")
 
 def PDFSearch(folder):
     """
@@ -56,10 +58,10 @@ def CheckList(List):
         pass
 
 def PDFMergeFunc(List):
-    pdfWriter = PyPDF2.PdfFileWriter()
+    pdfWriter = PyPDF4.PdfFileWriter()
     for pdf in List:
         pdfFileObj = open(pdf,'rb')
-        pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+        pdfReader = PyPDF4.PdfFileReader(pdfFileObj)
 
         #Opening each page of the PDF
         for pageNum in range(pdfReader.numPages):
