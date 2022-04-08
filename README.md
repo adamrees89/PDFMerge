@@ -14,6 +14,6 @@ This is a small Windows utility which is designed to be called via a right click
 
 Future work:
 
-[ ] Investigate PDFs that will not merge (Certain CAD Files)
-[ ] Optimisation for large numbers of files
-[ ] Better error handling
+[ ] Investigate PDFs that will not merge (Certain CAD Files) 
+[ ] Optimisation for large numbers of files 
+[ ] Better error handling 
