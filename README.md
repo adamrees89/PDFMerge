@@ -12,3 +12,8 @@
 
 This is a small Windows utility which is designed to be called via a right click on a directory full of PDFs.  The script uses PyPDF4 to merge the folders, and no other dependancies.
 
+Future work:
+
+[ ] Investigate PDFs that will not merge (Certain CAD Files)
+[ ] Optimisation for large numbers of files
+[ ] Better error handling
