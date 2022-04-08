@@ -10,5 +10,10 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/adamrees89/PDFMerge.svg)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/adamrees89/PDFMerge.svg)
 
-This is a small Windows utility which is designed to be called via a right click on a directory full of PDFs.  The script uses PyPDF2 to merge the folders, and no other dependancies.
+This is a small Windows utility which is designed to be called via a right click on a directory full of PDFs.  The script uses PyPDF4 to merge the folders, and no other dependancies.
 
+Future work:
+
+- [ ] Investigate PDFs that will not merge (Certain CAD Files) 
+- [ ] Optimisation for large numbers of files 
+- [ ] Better error handling 
