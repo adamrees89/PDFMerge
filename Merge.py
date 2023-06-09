@@ -16,12 +16,8 @@ import glob
 import tkinter
 from tkinter import messagebox
 import PyPDF4
-
-start = time.time()
-
-ClickedOnFolder = " ".join(sys.argv[1:])
-
-Desktop = winshell.desktop()
+from tkinter import Tk
+from tkinter.filedialog import askdirectory
 
 def PDFSearch(folder):
     """
@@ -74,16 +70,26 @@ def PDFMergeFunc(List):
         pdfWriter.write(pdfOutput)
         pdfOutput.close()
 
+if __name__ == "__main__":
+    start = time.time()
+    ClickedOnFolder = " ".join(sys.argv[1:])
+    Desktop = winshell.desktop()
+    
+    if ClickedOnFolder == "":
+        Tk().withdraw()
+        WorkingDirectory = askdirectory()
+    else:
+        WorkingDirectory = ClickedOnFolder
+    
+    PDFs = PDFSearch(WorkingDirectory)
+    NumberOfPDFs = len(PDFs)
+    PDFMergeFunc(PDFs)
+    end = time.time()
 
-PDFs = PDFSearch(ClickedOnFolder)
-NumberOfPDFs = len(PDFs)
-PDFMergeFunc(PDFs)
-end = time.time()
+    print(f"""
+        Done! Merged {NumberOfPDFs} PDF files in {round(end-start,2)} seconds.\n
+        Processed at a rate of {round(round(end-start, 2)/NumberOfPDFs, 3)} 
+        seconds per PDF.
+        """)
 
-print(f"""
-      Done! Merged {NumberOfPDFs} PDF files in {round(end-start,2)} seconds.\n
-      Processed at a rate of {round(round(end-start, 2)/NumberOfPDFs, 3)} 
-      seconds per PDF.
-      """)
-
-time.sleep(2)
+    time.sleep(2)
